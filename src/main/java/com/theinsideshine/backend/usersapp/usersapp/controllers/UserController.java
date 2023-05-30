@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.w3c.dom.UserDataHandler;
+
 
 import com.theinsideshine.backend.usersapp.usersapp.models.dto.UserDto;
 import com.theinsideshine.backend.usersapp.usersapp.models.entities.User;
