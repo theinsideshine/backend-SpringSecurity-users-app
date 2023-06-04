@@ -25,6 +25,10 @@ import com.theinsideshine.backend.usersapp.usersapp.models.entities.User;
 import com.theinsideshine.backend.usersapp.usersapp.models.request.UserRequest;
 import com.theinsideshine.backend.usersapp.usersapp.services.UserService;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 import jakarta.validation.Valid;
 
 @RestController
@@ -38,6 +42,12 @@ public class UserController {
     @GetMapping
     public List<UserDto> list() {
         return service.findAll();
+    }
+
+    @GetMapping("/page/{page}")
+    public Page<UserDto> list(@PathVariable Integer page) {
+        Pageable pageable = PageRequest.of(page, 5);
+        return service.findAll(pageable);
     }
 
     @GetMapping("/{id}")
